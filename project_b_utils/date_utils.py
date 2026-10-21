@@ -1,15 +1,12 @@
 from datetime import date, datetime, timedelta
 
-WEEKDAYS = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
-
 
 def get_current_date(as_datetime=False):
     return datetime.now() if as_datetime else date.today()
 
 
-def format_date(value, fmt='%d.%m.%Y', weekday=False):
-    result = value.strftime(fmt)
-    return f'{result} ({WEEKDAYS[value.weekday()]})' if weekday else result
+def format_date(value, fmt='%d.%m.%Y'):
+    return value.strftime(fmt)
 
 
 def days_between(start, end):
